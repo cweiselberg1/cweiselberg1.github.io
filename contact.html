@@ -84,7 +84,13 @@
                 <!-- Contact Form -->
                 <div class="col-md-6 col-md-offset-1">
                     <h2 class="section-title">Send Me a Message</h2>
-                    <form id="contactForm" action="https://formspree.io/f/xkgngjpr" method="POST" style="margin-top: 30px;">
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" style="margin-top: 30px;">
+                        <!-- Web3Forms Access Key -->
+                        <input type="hidden" name="access_key" value="67d579b8-fa4a-4c53-beac-6b039f25740a">
+                        <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
+                        <input type="hidden" name="from_name" value="Portfolio Contact Form">
+                        <input type="hidden" name="redirect" value="https://cweiselberg1.github.io/contact.html?success=true">
+
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
@@ -107,7 +113,7 @@
 
                         <div class="form-group">
                             <label for="subject">Subject *</label>
-                            <input type="text" class="form-control" id="subject" name="_subject" required placeholder="What would you like to discuss?">
+                            <input type="text" class="form-control" id="subject" name="custom_subject" required placeholder="What would you like to discuss?">
                         </div>
 
                         <div class="form-group">
@@ -150,6 +156,24 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script>
+    // Check if form was successfully submitted
+    window.addEventListener('load', function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('success') === 'true') {
+            const response = document.getElementById('formResponse');
+            response.innerHTML = '<div class="alert alert-success"><strong>Success!</strong> Your message has been sent. I\'ll get back to you soon!</div>';
+            response.style.display = 'block';
+
+            // Clear the form
+            document.getElementById('contactForm').reset();
+
+            // Remove success param from URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+    });
+    </script>
 
 </body>
 </html>
