@@ -84,7 +84,7 @@
                 <!-- Contact Form -->
                 <div class="col-md-6 col-md-offset-1">
                     <h2 class="section-title">Send Me a Message</h2>
-                    <form id="contactForm" style="margin-top: 30px;">
+                    <form id="contactForm" action="https://formspree.io/f/xkgngjpr" method="POST" style="margin-top: 30px;">
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" class="form-control" id="name" name="name" required placeholder="Your Name">
@@ -107,7 +107,7 @@
 
                         <div class="form-group">
                             <label for="subject">Subject *</label>
-                            <input type="text" class="form-control" id="subject" name="subject" required placeholder="What would you like to discuss?">
+                            <input type="text" class="form-control" id="subject" name="_subject" required placeholder="What would you like to discuss?">
                         </div>
 
                         <div class="form-group">
@@ -150,37 +150,6 @@
 
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <script>
-    // Contact form handling (mailto fallback since GitHub Pages doesn't support backend)
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-
-        var name = document.getElementById('name').value;
-        var email = document.getElementById('email').value;
-        var phone = document.getElementById('phone').value;
-        var company = document.getElementById('company').value;
-        var subject = document.getElementById('subject').value;
-        var message = document.getElementById('message').value;
-
-        var body = 'Name: ' + name + '\n';
-        body += 'Email: ' + email + '\n';
-        if (phone) body += 'Phone: ' + phone + '\n';
-        if (company) body += 'Company: ' + company + '\n';
-        body += '\nMessage:\n' + message;
-
-        var mailtoLink = 'mailto:CWeiselberg1@gmail.com?subject=' +
-            encodeURIComponent(subject) +
-            '&body=' + encodeURIComponent(body);
-
-        window.location.href = mailtoLink;
-
-        // Show confirmation
-        var response = document.getElementById('formResponse');
-        response.innerHTML = '<div class="alert alert-info"><strong>Opening your email client...</strong> If nothing happens, please email me directly at <a href="mailto:CWeiselberg1@gmail.com">CWeiselberg1@gmail.com</a></div>';
-        response.style.display = 'block';
-    });
-    </script>
 
 </body>
 </html>
