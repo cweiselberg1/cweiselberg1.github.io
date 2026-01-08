@@ -453,17 +453,16 @@ body {
     animation-delay: 1.5s;
 }
 
-/* Enhanced hover states with cell effect - EXAGGERATED */
+/* Enhanced hover states with cell effect */
 .capability-card:hover,
 .workflow-card:hover,
 .stat-box:hover,
 .content-section:hover,
 .process-step:hover {
     animation: none;
-    box-shadow: 0 25px 60px rgba(102, 126, 234, 0.5),
-                0 0 0 3px rgba(102, 126, 234, 0.3),
-                0 0 80px rgba(102, 126, 234, 0.2);
-    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.3),
+                0 0 0 2px rgba(102, 126, 234, 0.2);
+    transform: translateY(-5px) scale(1.02);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 10;
 }
@@ -540,9 +539,9 @@ body {
 }
 
 .btn:hover {
-    transform: translateY(-5px) scale(1.08);
-    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.5),
-                0 0 30px rgba(102, 126, 234, 0.3);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4),
+                0 0 15px rgba(102, 126, 234, 0.2);
 }
 
 .btn::after {
@@ -576,9 +575,9 @@ body {
 
 .process-box:hover {
     animation: none;
-    transform: scale(1.15);
-    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.6),
-                0 0 40px rgba(102, 126, 234, 0.4);
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4),
+                0 0 20px rgba(102, 126, 234, 0.3);
 }
 
 /* Link hover glow */
