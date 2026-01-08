@@ -1,7 +1,7 @@
 /* Global Styles */
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #C9C9C9;
     color: #333;
     padding-top: 70px;
 }
@@ -75,7 +75,7 @@ body {
 }
 
 .section.bg-light {
-    background-color: #f8f9fa;
+    background-color: #C9C9C9;
 }
 
 .section-title {
