@@ -1,168 +1,365 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Charles Weiselberg | Customer Success Leader and implementation expert improving and enhancing customer experience for SaaS solutions.">
-    <title>Charles Weiselberg | Customer Success | Process Optimization </title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='12' fill='%23333'/%3E%3Ctext x='50' y='65' font-family='Arial,sans-serif' font-size='40' font-weight='bold' fill='white' text-anchor='middle'%3ECW%3C/text%3E%3C/svg%3E">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Charles Weiselberg — Customer Success leader focused on process optimization, customer communications, and process mapping." />
+  <title>Charles Weiselberg — Customer Success</title>
 
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+  <!-- Optional: nicer typography without frameworks -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --paper:#fbfaf7;
+      --ink:#121212;
+      --muted:#4b4b4b;
+      --rule:rgba(18,18,18,.14);
+      --link:#0b57d0;
+
+      --serif: "Source Serif 4", ui-serif, Georgia, "Times New Roman", Times, serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+
+      --max: 920px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background: var(--paper);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .wrap{
+      width: min(var(--max), calc(100% - 44px));
+      margin: 0 auto;
+      padding: 56px 0 64px;
+    }
+
+    /* Top header */
+    header{
+      display:grid;
+      grid-template-columns: 1fr auto;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 720px){
+      header{ grid-template-columns: 1fr; }
+    }
+
+    .name{
+      font-family: var(--serif);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      font-size: clamp(34px, 5vw, 52px);
+      margin:0;
+    }
+
+    .title{
+      margin-top: 10px;
+      max-width: 70ch;
+      font-family: var(--sans);
+      font-size: 15.5px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .meta{
+      text-align:right;
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-top: 6px;
+    }
+    @media (max-width: 720px){
+      .meta{ text-align:left; }
+    }
+
+    a{ color: var(--link); text-decoration: none; }
+    a:hover{ text-decoration: underline; text-underline-offset: 3px; }
+
+    hr{
+      border:0;
+      border-top: 1px solid var(--rule);
+      margin: 22px 0;
+    }
+
+    /* Sections */
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+      margin-top: 26px;
+    }
+
+    section{
+      padding-top: 6px;
+    }
+
+    h2{
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 0 0 10px;
+    }
+
+    p{
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.75;
+      margin: 0 0 12px;
+    }
+
+    .lede{
+      font-size: 19px;
+      line-height: 1.8;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px 28px;
+      align-items:start;
+    }
+    @media (max-width: 820px){
+      .two-col{ grid-template-columns: 1fr; }
+    }
+
+    .list{
+      margin: 0;
+      padding-left: 18px;
+      font-family: var(--serif);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+    .list li{ margin: 8px 0; }
+
+    .kicker{
+      font-family: var(--sans);
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.7;
+      margin-top: 6px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .card{
+      border: 1px solid var(--rule);
+      padding: 14px 16px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.35);
+    }
+    .card h3{
+      margin: 0 0 6px;
+      font-family: var(--sans);
+      font-size: 16px;
+      letter-spacing: -0.01em;
+    }
+    .card p{
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .metrics{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+    @media (max-width: 900px){
+      .metrics{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px){
+      .metrics{ grid-template-columns: 1fr; }
+    }
+
+    .metric{
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      padding: 12px 14px;
+      background: rgba(255,255,255,.35);
+    }
+    .metric .num{
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 18px;
+      margin: 0 0 2px;
+      letter-spacing: -0.01em;
+    }
+    .metric .label{
+      margin: 0;
+      font-family: var(--sans);
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    footer{
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid var(--rule);
+      font-family: var(--sans);
+      color: var(--muted);
+      font-size: 13.5px;
+      display:flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .nav{
+      display:flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-family: var(--sans);
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+    @media (max-width: 720px){
+      .nav{ justify-content:flex-start; }
+    }
+
+    .nav a{
+      color: var(--muted);
+    }
+  </style>
 </head>
+
 <body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html">Charles Weiselberg</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="workflows.html">Workflows</a></li>
-                    <li><a href="customer-communications.html">Customer Communications</a></li>
-                    <li><a href="process-mapping.html">Mapping a Process</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
+  <div class="wrap" id="top">
+    <header>
+      <div>
+        <h1 class="name">Charles Weiselberg</h1>
+        <div class="title">
+          Customer Success leader and SaaS expert focused on results — process optimization, customer communications,
+          and process mapping. 8+ years improving onboarding speed, reducing churn, and enhancing customer experience.
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <div class="hero-section">
-        <div class="container">
-            <h1 class="hero-title">Customer Success Leader and SAAS Expert Focused on Results</h1>
-            <p class="hero-subtitle">8+ Years Improving Onboarding Speed, Reducing Churn, and Enhancing Customer Success.</p>
-          <p class="hero-subtitle">Hi, my name is Charles Weiselberg, and I am an experienced Director of Customer Success for SaaS-based solutions. I help organizations optimize processes, automate the busywork, and keep clients happy.</p>
-            <div class="hero-buttons">
-                <a href="about.html" class="btn btn-primary btn-lg">Learn More About Me</a>
-                <a href="workflows.html" class="btn btn-default btn-lg">View My Work</a>
-            </div>
+        <nav class="nav" aria-label="On-page navigation">
+          <a href="#about">About</a>
+          <a href="#focus">Focus</a>
+          <a href="#impact">Impact</a>
+          <a href="#links">Links</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="meta">
+        <div><strong style="color:var(--ink); font-weight:600;">Customer Success</strong></div>
+        <div>Forest Hills, NY</div>
+        <div><a href="mailto:cweiselberg1@gmail.com">cweiselberg1@gmail.com</a></div>
+        <div><a href="https://www.linkedin.com/in/charles-weiselberg" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+      </div>
+    </header>
+
+    <hr />
+
+    <div class="grid">
+      <section id="about">
+        <h2>About</h2>
+        <p class="lede">
+          Hi, my name is Charles Weiselberg, and I am an experienced Director of Customer Success for SaaS-based solutions.
+          I help organizations optimize processes, automate the busywork, and keep clients happy.
+        </p>
+        <p class="kicker">
+          I blend leadership, a customer-centric approach, and a data-driven strategy to deliver a best-in-class customer experience
+          clients associate with your brand for years to come.
+        </p>
+      </section>
+
+      <section id="focus">
+        <h2>Focus</h2>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Process Optimization</h3>
+            <p>Automating workflows and eliminating inefficiencies to maximize productivity and reduce operational costs.</p>
+          </div>
+
+          <div class="card">
+            <h3>Customer Communications</h3>
+            <p>Developing communication strategies that enhance customer satisfaction and build lasting relationships.</p>
+          </div>
+
+          <div class="card">
+            <h3>Process Mapping</h3>
+            <p>Creating visual documentation of business processes to identify improvement opportunities and ensure consistency.</p>
+          </div>
         </div>
+      </section>
+
+      <section id="impact">
+        <h2>Impact</h2>
+
+        <div class="metrics" role="list">
+          <div class="metric" role="listitem">
+            <p class="num">30%</p>
+            <p class="label">Boost in efficiency from CRM optimization</p>
+          </div>
+          <div class="metric" role="listitem">
+            <p class="num">15+ hrs</p>
+            <p class="label">Saved weekly by automating repetitive tasks</p>
+          </div>
+          <div class="metric" role="listitem">
+            <p class="num">0</p>
+            <p class="label">Clients fined, audited, or issued corrective action plans</p>
+          </div>
+          <div class="metric" role="listitem">
+            <p class="num">25%</p>
+            <p class="label">Reduction in onboarding timelines</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="links">
+        <h2>Links</h2>
+        <ul class="list">
+          <li><a href="https://www.linkedin.com/in/charles-weiselberg" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          If you're hiring for Customer Success leadership or want help tightening onboarding, retention, or internal processes,
+          I'm happy to talk.
+        </p>
+        <p class="kicker">
+          Email: <a href="mailto:cweiselberg1@gmail.com">cweiselberg1@gmail.com</a>
+          &nbsp;•&nbsp;
+          LinkedIn: <a href="https://www.linkedin.com/in/charles-weiselberg" target="_blank" rel="noopener noreferrer">Message me here</a>
+        </p>
+      </section>
     </div>
 
-    <!-- Value Proposition -->
-    <div class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <h2 class="section-title"></h2>
-                    <p class="lead-text">Charles Weiselberg is a Customer Success expert who uniquely blends together his leadership abilities, a customer-centric approach, and a data-driven strategy in order to provide a best-in-class customer experience his clients will associate with your brand for years to come.</p>
-                    <blockquote>
-                        <p>"I love helping organizations eliminate the ambiguity of complex scenarios. I aim to provide honest advice to clients that can be applied in practical scenarios to help them execute their compliance plans as efficiently as possible."</p>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Key Capabilities -->
-    <div class="section bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="capability-card">
-                        <div class="capability-icon">
-                            <span class="glyphicon glyphicon-cog"></span>
-                        </div>
-                        <h3>Process Optimization</h3>
-                        <p>Automating workflows and eliminating inefficiencies to maximize productivity and reduce operational costs.</p>
-                        <a href="workflows.html" class="card-link">See Examples &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="capability-card">
-                        <div class="capability-icon">
-                            <span class="glyphicon glyphicon-comment"></span>
-                        </div>
-                        <h3>Customer Communications</h3>
-                        <p>Developing effective communication strategies that enhance customer satisfaction and build lasting relationships.</p>
-                        <a href="customer-communications.html" class="card-link">Learn More &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="capability-card">
-                        <div class="capability-icon">
-                            <span class="glyphicon glyphicon-map-marker"></span>
-                        </div>
-                        <h3>Process Mapping</h3>
-                        <p>Creating visual documentation of business processes to identify improvement opportunities and ensure consistency.</p>
-                        <a href="process-mapping.html" class="card-link">View Process Maps &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Impact Section -->
-    <div class="section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="section-title text-center">Proven Impact</h2>
-                </div>
-            </div>
-            <div class="row stats-row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="stat-box">
-                        <div class="stat-number">30%</div>
-                        <div class="stat-label">Boost in Efficiency from CRM Optimization</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="stat-box">
-                        <div class="stat-number">15+</div>
-                        <div class="stat-label">Hours Saved from Automating Repetitive Tasks Every Week</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="stat-box">
-                        <div class="stat-number">0</div>
-                        <div class="stat-label">Clients Fined, Audited, or Given a Corrective Action Plan</div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <div class="stat-box">
-                        <div class="stat-number">25%</div>
-                        <div class="stat-label">Reduction in onboarding timelines</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- CTA Section -->
-    <div class="section cta-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <h2 style="color: white; margin-bottom: 20px;">Ready to Stop Worrying About Your Clients and Know You Have Happy Customers?</h2>
-                    <p style="color: rgba(255,255,255,0.9); font-size: 18px; margin-bottom: 30px;">Let's discuss how I can help streamline your business processes, drive revenue, reduce client turnover, and stay focused on results.</p>
-                    <a href="about.html#contact" class="btn btn-primary btn-lg">Get In Touch</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="portfolio-footer">
-        <div class="container">
-            <p>&copy; 2026 Charles Weiselberg | Professional Portfolio</p>
-        </div>
+    <footer>
+      <div>© <span id="year"></span> Charles Weiselberg</div>
+      <div><a href="#top">Back to top</a></div>
     </footer>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
