@@ -253,6 +253,78 @@
       margin: 16px 0 20px;
       display: block;
     }
+
+    /* Dropdown/Accordion Styles */
+    details.dropdown{
+      border: 1px solid var(--rule);
+      border-radius: 10px;
+      background: rgba(255,255,255,.35);
+      margin-bottom: 12px;
+    }
+    details.dropdown summary{
+      padding: 14px 16px;
+      font-family: var(--sans);
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    details.dropdown summary::-webkit-details-marker{ display: none; }
+    details.dropdown summary::after{
+      content: '+';
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--muted);
+      transition: transform 0.2s;
+    }
+    details.dropdown[open] summary::after{
+      content: '−';
+    }
+    details.dropdown .dropdown-content{
+      padding: 0 16px 16px;
+      border-top: 1px solid var(--rule);
+    }
+    details.dropdown .dropdown-content p{
+      font-family: var(--serif);
+      font-size: 16px;
+      color: var(--muted);
+      margin: 12px 0 10px;
+    }
+    details.dropdown .dropdown-content ul{
+      margin: 0;
+      padding-left: 20px;
+      font-family: var(--serif);
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink);
+    }
+    details.dropdown .dropdown-content ul li{
+      margin: 8px 0;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 600px){
+      .wrap{ padding: 30px 0 40px; }
+      .name{ font-size: 28px; }
+      h2{ font-size: 11px; }
+      h3{ font-size: 15px; }
+      p, .list{ font-size: 16px; }
+      .title{ font-size: 14px; }
+      .card{ padding: 12px 14px; }
+      .card p{ font-size: 15px; }
+      .metric .num{ font-size: 16px; }
+      .metric .label{ font-size: 12px; }
+      .kicker{ font-size: 13px; }
+      .nav{ gap: 8px; font-size: 13px; }
+      footer{ font-size: 12px; flex-direction: column; text-align: center; }
+      .profile-img{ max-width: 200px; margin: 10px auto; }
+      details.dropdown summary{ font-size: 15px; padding: 12px 14px; }
+      details.dropdown .dropdown-content{ padding: 0 14px 14px; }
+      details.dropdown .dropdown-content ul{ font-size: 14px; }
+    }
   </style>
 <!-- Mixpanel Analytics -->
 <script type="text/javascript">
@@ -345,24 +417,46 @@ mixpanel.init("ad228a2598e6844288fe4e90acc14e76", {
       <section id="focus">
         <h3>Focus</h3>
 
-        <div class="cards">
-          <div class="card">
-            <h3>Process Optimization</h3>
-            <p>Automating workflows and eliminating inefficiencies to maximize productivity and reduce operational costs.</p><br>
-            <p>Auditing current business practices bi-annually to gauge effectiveness and ensure an A++ customer experience</p><br><br>
-            <p>Backtesting new workflows against previous benchmarks prior to launch to ensure effective campaigns</p><br><br>
+        <details class="dropdown">
+          <summary>Process Optimization</summary>
+          <div class="dropdown-content">
+            <p>Automating workflows and eliminating inefficiencies to maximize productivity and reduce operational costs.</p>
+            <ul>
+              <li>Building CRM automations that track customer journey stages and trigger proactive outreach</li>
+              <li>Designing workflows that let one person deliver results like a team of ten</li>
+              <li>Auditing business practices bi-annually to gauge effectiveness and ensure an A++ customer experience</li>
+              <li>Backtesting new workflows against previous benchmarks prior to launch</li>
+              <li>Reducing onboarding timelines through systematic process improvement</li>
+            </ul>
           </div>
+        </details>
 
-          <div class="card">
-            <h3>HIPAA Compliance</h3>
-            <p>Bringing customers to their 'A-ha' moment when a difficult concept clicks.</p>
+        <details class="dropdown">
+          <summary>HIPAA Compliance</summary>
+          <div class="dropdown-content">
+            <p>Guiding healthcare organizations through complex regulatory requirements with zero audit failures.</p>
+            <ul>
+              <li>Building bulletproof compliance plans that protect organizations and their patients</li>
+              <li>Translating technical requirements into actionable steps for non-technical teams</li>
+              <li>Bringing customers to their 'A-ha' moment when difficult concepts click</li>
+              <li>Creating self-service resources that reduce support burden while maintaining compliance</li>
+              <li>Maintaining perfect track record: zero fines, zero corrective action plans</li>
+            </ul>
           </div>
+        </details>
 
-          <div class="card">
-            <h3>Customer Feedback</h3>
-            <p>Using active listening to understand customer needs and introduce other departments to concepts as withou</p>
+        <details class="dropdown">
+          <summary>Voice of Customer</summary>
+          <div class="dropdown-content">
+            <p>Turning customer conversations into product improvements and company-wide priorities.</p>
+            <ul>
+              <li>Bridging communication between customers and Product, Engineering, and Sales teams</li>
+              <li>Using behavioral data from Mixpanel and Amplitude to identify adoption blockers</li>
+              <li>Building feedback loops that drive retention and reduce churn risk early</li>
+              <li>Empathetic interactions that feel personal, not procedural</li>
+            </ul>
           </div>
-        </div>
+        </details>
       </section>
 
       <section id="impact">
