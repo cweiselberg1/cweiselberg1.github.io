@@ -259,6 +259,36 @@
       display: block;
     }
 
+    /* Skill Tags */
+    .skill-tags{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .skill-tag{
+      display: inline-block;
+      padding: 8px 14px;
+      font-family: var(--sans);
+      font-size: 14px;
+      background: rgba(11, 87, 208, 0.08);
+      color: var(--ink);
+      border-radius: 20px;
+      border: 1px solid rgba(11, 87, 208, 0.2);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .skill-tag:hover{
+      transform: scale(1.05);
+      background: rgba(11, 87, 208, 0.15);
+    }
+    .skill-tag.tool{
+      background: rgba(0, 128, 0, 0.08);
+      border-color: rgba(0, 128, 0, 0.2);
+    }
+    .skill-tag.tool:hover{
+      background: rgba(0, 128, 0, 0.15);
+    }
+
     /* Dropdown/Accordion Styles */
     details.dropdown{
       border: 1px solid var(--rule);
@@ -358,6 +388,7 @@ mixpanel.init("ad228a2598e6844288fe4e90acc14e76", {
           <a href="#experience">Experience</a>
           <a href="#focus">Focus</a>
           <a href="#impact">Impact</a>
+          <a href="#skills">Skills</a>
           <a href="#interests">Interests</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -500,6 +531,32 @@ mixpanel.init("ad228a2598e6844288fe4e90acc14e76", {
             <p class="num">0</p>
             <p class="label">Clients ever fined, audited, or issued corrective action plans by regulatory bodies</p>
           </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h3>Skills</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Customer Success Leadership</span>
+          <span class="skill-tag">HIPAA Compliance</span>
+          <span class="skill-tag">Stakeholder Management</span>
+          <span class="skill-tag">B2B SaaS</span>
+          <span class="skill-tag">Churn Prevention</span>
+          <span class="skill-tag">Process Mapping</span>
+          <span class="skill-tag">ROI Analysis</span>
+          <span class="skill-tag">KPIs</span>
+          <span class="skill-tag tool">Vitally</span>
+          <span class="skill-tag tool">Custify</span>
+          <span class="skill-tag tool">HubSpot</span>
+          <span class="skill-tag tool">InfusionSoft</span>
+          <span class="skill-tag tool">Intercom</span>
+          <span class="skill-tag tool">Mixpanel</span>
+          <span class="skill-tag tool">Amplitude</span>
+          <span class="skill-tag tool">Google Analytics</span>
+          <span class="skill-tag tool">Zapier</span>
+          <span class="skill-tag tool">Stripe</span>
+          <span class="skill-tag tool">Notion</span>
+          <span class="skill-tag tool">Asana</span>
         </div>
       </section>
 
